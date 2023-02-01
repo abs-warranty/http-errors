@@ -1,0 +1,62 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NODE_VERSION: '16.15.0'
+
+jobs:
+  bump:
+    if: "!contains(github.event.head_commit.message, 'ci: version bump')"
+    runs-on: ubuntu-20.04
+    outputs:
+      sha: ${{ steps.step3.outputs.sha }}
+      newTag: ${{ steps.step2.outputs.newTag }}
+    steps:
+      - id: step1
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - id: step2
+        name: Automated Version Bump
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+        with:
+          tag-prefix: ''
+          target-branch: 'master'
+
+      - id: step3
+        run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+
+  publish:
+    if: "!contains(github.event.head_commit.message, 'ci: version bump')"
+    name: Publish to NPM
+    runs-on: ubuntu-20.04
+    needs: [bump]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ needs.bump.outputs.sha }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Publish
+        run: npm publish
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.bump.outputs.newTag }}
+          token: ${{ secrets.GH_ADMIN_TOKEN }}

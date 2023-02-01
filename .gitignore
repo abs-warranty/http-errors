@@ -1,0 +1,17 @@
+**/node_modules
+**/.env
+**/.nyc_output
+**/*.log
+**/*.pem
+
+# tmp dir
+.tmp/
+
+#For mac users
+.DS_Store
+
+scripts/
+
+# IDE's
+**/.vscode
+**/.idea
