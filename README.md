@@ -1,8 +1,5 @@
 # Custom HTTP Errors
 
-To install for development:
-`yarn add ../http-errors`
-
 To install for production:
 `yarn add @abs-warranty/http-errors`
 
