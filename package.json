@@ -1,5 +1,5 @@
 {
-  "name": "http-errors",
+  "name": "@abs-warranty/http-errors",
   "version": "1.0.1",
   "description": "Custom HTTP Errors",
   "main": "errors/index.js",
