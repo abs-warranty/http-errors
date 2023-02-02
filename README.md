@@ -6,7 +6,7 @@ To install for development:
 To install for production:
 `yarn add @abs-warranty/http-errors`
 
-Import the utility for the service you are working with. Ex:
+Import the error you are wanting to use Ex:
 
 ```javascript
 const { NotFoundError } = require('@abs-warranty/http-errors')
