@@ -2,9 +2,9 @@
   "name": "@abs-warranty/http-errors",
   "version": "1.0.2",
   "description": "Custom HTTP Errors",
-  "main": "errors/index.js",
+  "main": "index.js",
   "exports": {
-    ".": "./errors/index.js"
+    ".": "./index.js"
   },
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "license": "MIT",
