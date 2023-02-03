@@ -7,15 +7,30 @@
     ".": "./index.js"
   },
   "repository": "git@github.com:abs-warranty/http-errors.git",
+  "contributors": [
+    "Dave Snyder <daverted@gmail.com>",
+    "William Kersting <wtkersting@gmail.com>",
+    "Jonathan Sowards <jtsowards@gmail.com>",
+    "Shelly Lane <shellyjlane@gmail.com>"
+  ],
   "license": "MIT",
+  "scripts": {
+    "doc": "node typedoc.mjs",
+    "type": "tsc --checkJs true --noEmit false --emitDeclarationOnly true"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
   "devDependencies": {
+    "globby": "^12.0.2",
     "husky": "^8.0.2",
     "prettier": "^2.7.1",
-    "pretty-quick": "^3.1.3"
+    "pretty-quick": "^3.1.3",
+    "typedoc": "^0.23.24",
+    "typedoc-github-wiki-theme": "^1.0.1",
+    "typedoc-plugin-markdown": "^3.14.0",
+    "typescript": "^4.9.4"
   }
 }
