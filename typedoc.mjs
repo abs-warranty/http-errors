@@ -11,15 +11,11 @@ async function main() {
     }
   )
 
-  console.log(files);
-
   const app = new TypeDoc.Application()
 
   // load tsconfig.json
   app.options.addReader(new TypeDoc.TSConfigReader())
   app.options.addReader(new TypeDoc.TypeDocReader())
-
-  console.log(files.flat())
 
   app.bootstrap({
     // typedoc options here
