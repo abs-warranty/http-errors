@@ -3,5 +3,5 @@
     "includeVersion": true,
     "disableSources": true,
     "cleanOutputDir": true,
-    "theme": "./node_modules/typedoc-github-wiki-theme/dist"
+    "theme": "markdown"
   }
