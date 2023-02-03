@@ -60,3 +60,48 @@ jobs:
         with:
           tag_name: ${{ needs.bump.outputs.newTag }}
           token: ${{ secrets.GH_ADMIN_TOKEN }}
+  docs:
+    if: "!contains(github.event.head_commit.message, 'ci: version bump')"
+    name: Publish docs to GitHub Wiki
+    runs-on: ubuntu-20.04
+    needs: [bump]
+    steps:
+      - name: Checkout library code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ needs.bump.outputs.sha }}
+          path: library
+
+      - name: Checkout wiki code
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: docs
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+          cache-dependency-path: library/yarn.lock
+
+      - working-directory: ./library
+        run: yarn install
+
+      - working-directory: ./library
+        run: yarn build
+
+      - working-directory: ./library
+        run: yarn doc
+
+      - name: Copy docs to wiki repo
+        run: |
+          rsync -r ./library/docs/ ./docs
+
+      - name: Push the updated docs
+        working-directory: ./docs
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add .
+          git commit -m 'Update docs for library version ${{ needs.bump.outputs.newTag }}'
+          git push
