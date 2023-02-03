@@ -18,7 +18,7 @@ const response = {
 /**
  * Generic HTTP errors have JSON message and status
  * @class
- * @extends Error
+ * @extends {Error}
  */
 class HttpError extends Error {
   /**
@@ -40,7 +40,7 @@ class HttpError extends Error {
 /**
  * Custom error denoting a bad request was made (HTTP 400)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class BadRequestError extends HttpError {
   /**
@@ -56,7 +56,7 @@ class BadRequestError extends HttpError {
 /**
  * Custom error denoting the user is not authorized (HTTP 401)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class UnauthorizedError extends HttpError {
   /**
@@ -72,7 +72,7 @@ class UnauthorizedError extends HttpError {
 /**
  * Custom error denoting the user has insufficient privileges (HTTP 403)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class ForbiddenError extends HttpError {
   /**
@@ -88,7 +88,7 @@ class ForbiddenError extends HttpError {
 /**
  * Custom error denoting a resource has not been found (HTTP 404)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class NotFoundError extends HttpError {
    /**
@@ -104,7 +104,7 @@ class NotFoundError extends HttpError {
 /**
  * Custom error denoting the method used is not allowed for this endpoint (HTTP 405)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class NotAllowedError extends HttpError {
    /**
@@ -120,7 +120,7 @@ class NotAllowedError extends HttpError {
 /**
  * Custom error denoting a resource is in conflict
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class ConflictError extends HttpError {
    /**
@@ -136,7 +136,7 @@ class ConflictError extends HttpError {
 /**
  * Custom error denoting that the machine really is actually a teapot 🍵
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class IAmATeapotError extends HttpError {
    /**
@@ -152,7 +152,7 @@ class IAmATeapotError extends HttpError {
 /**
  * Custom error denoting the user must enhance their frickin' calm, maaaan. 🌿
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class EnhanceYourCalmError extends HttpError {
    /**
@@ -168,7 +168,7 @@ class EnhanceYourCalmError extends HttpError {
 /**
  * Custom error denoting an unprocessable entity
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class UnprocessableEntityError extends HttpError {
    /**
@@ -184,7 +184,7 @@ class UnprocessableEntityError extends HttpError {
 /**
  * Custom error denoting an internal server error (HTTP 500)
  * @class
- * @extends HttpError
+ * @extends {HttpError}
  */
 class InternalServerError extends HttpError {
    /**
