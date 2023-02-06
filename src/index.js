@@ -24,7 +24,7 @@ class HttpError extends Error {
   /**
    * @param {number} statusCode 
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage]
    */
   constructor(statusCode, message, externalMessage) {
     super(message)
@@ -45,7 +45,7 @@ class HttpError extends Error {
 class BadRequestError extends HttpError {
   /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage]
    */
   constructor(message, externalMessage) {
     super(400, message, externalMessage)
@@ -61,7 +61,7 @@ class BadRequestError extends HttpError {
 class UnauthorizedError extends HttpError {
   /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage]
    */
   constructor(message, externalMessage) {
     super(401, message, externalMessage)
@@ -77,7 +77,7 @@ class UnauthorizedError extends HttpError {
 class ForbiddenError extends HttpError {
   /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage]
    */
   constructor(message, externalMessage) {
     super(403, message, externalMessage)
@@ -93,7 +93,7 @@ class ForbiddenError extends HttpError {
 class NotFoundError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage]
    */
   constructor(message, externalMessage) {
     super(404, message, externalMessage)
@@ -109,7 +109,7 @@ class NotFoundError extends HttpError {
 class NotAllowedError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(405, message, externalMessage)
@@ -125,7 +125,7 @@ class NotAllowedError extends HttpError {
 class ConflictError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(409, message, externalMessage)
@@ -141,7 +141,7 @@ class ConflictError extends HttpError {
 class IAmATeapotError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(418, message, externalMessage)
@@ -157,7 +157,7 @@ class IAmATeapotError extends HttpError {
 class EnhanceYourCalmError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(420, message, externalMessage)
@@ -173,7 +173,7 @@ class EnhanceYourCalmError extends HttpError {
 class UnprocessableEntityError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(422, message, externalMessage)
@@ -189,7 +189,7 @@ class UnprocessableEntityError extends HttpError {
 class InternalServerError extends HttpError {
    /**
    * @param {string} message 
-   * @param {string | boolean} externalMessage 
+   * @param {string | boolean} [externalMessage] 
    */
   constructor(message, externalMessage) {
     super(500, message, externalMessage)
