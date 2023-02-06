@@ -2,9 +2,9 @@
   "name": "@abs-warranty/http-errors",
   "version": "1.0.2",
   "description": "Custom HTTP Errors",
-  "main": "index.js",
+  "main": "src/index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./src/index.js"
   },
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "contributors": [
@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf docs types",
+    "clean": "rm -rf docs types rm tsconfig.tsbuildinfo",
     "doc": "node typedoc.mjs",
     "type": "tsc --checkJs true --noEmit false --emitDeclarationOnly true",
     "build": "yarn clean; yarn type"
