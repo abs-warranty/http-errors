@@ -105,3 +105,4 @@ jobs:
           git add .
           git commit -m 'Update docs for library version ${{ needs.bump.outputs.newTag }}'
           git push
+          
