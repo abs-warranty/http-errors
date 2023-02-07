@@ -8,7 +8,7 @@ Import the error you are wanting to use Ex:
 ```javascript
 const { NotFoundError } = require('@abs-warranty/http-errors')
 
-throw new NotFoundError("message")
+throw new NotFoundError("<yourMessageHere>")
 ```
 
 Available Errors:
