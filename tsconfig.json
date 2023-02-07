@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "lib": ["es2020", "DOM"],
+      "moduleResolution": "node",
+      "module": "esnext",
+      "allowSyntheticDefaultImports": true,
+      "allowJs": true,
+      "checkJs": true,
+      "emitDeclarationOnly": true, 
+      "strict": true,
+      "declarationDir": "./types",
+      "declaration": true,
+      "target": "es6",
+      "alwaysStrict": true,
+      "composite": true
+    },
+    "include": ["src/index.js"],
+    "exclude": ["node_modules"]
+  }

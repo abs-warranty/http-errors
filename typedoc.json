@@ -1,0 +1,7 @@
+{
+    "pretty": true,
+    "includeVersion": true,
+    "disableSources": true,
+    "cleanOutputDir": true,
+    "theme": "markdown"
+  }
