@@ -7,16 +7,16 @@ export class HttpError extends Error {
     /**
      * @param {number} statusCode
      * @param {string} message
-     * @param {string | boolean} externalMessage
+     * @param {string | boolean} [externalMessage]
      */
-    constructor(statusCode: number, message: string, externalMessage: string | boolean);
+    constructor(statusCode: number, message: string, externalMessage?: string | boolean | undefined);
     statusCode: number;
-    externalMessage: string | false;
+    externalMessage: string | false | undefined;
     json: {
         error: string;
         statusCode: number;
     } | {
-        message: string | false;
+        message: string | false | undefined;
         error: string;
         statusCode: number;
     };
@@ -30,9 +30,9 @@ export class HttpError extends Error {
 export class BadRequestError extends HttpError {
     /**
      * @param {string} message
-     * @param {string | boolean} externalMessage
+     * @param {string | boolean} [externalMessage]
      */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting the user is not authorized (HTTP 401)
@@ -42,9 +42,9 @@ export class BadRequestError extends HttpError {
 export class UnauthorizedError extends HttpError {
     /**
      * @param {string} message
-     * @param {string | boolean} externalMessage
+     * @param {string | boolean} [externalMessage]
      */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting the user has insufficient privileges (HTTP 403)
@@ -54,9 +54,9 @@ export class UnauthorizedError extends HttpError {
 export class ForbiddenError extends HttpError {
     /**
      * @param {string} message
-     * @param {string | boolean} externalMessage
+     * @param {string | boolean} [externalMessage]
      */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting a resource has not been found (HTTP 404)
@@ -66,9 +66,9 @@ export class ForbiddenError extends HttpError {
 export class NotFoundError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting the method used is not allowed for this endpoint (HTTP 405)
@@ -78,9 +78,9 @@ export class NotFoundError extends HttpError {
 export class NotAllowedError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting a resource is in conflict
@@ -90,9 +90,9 @@ export class NotAllowedError extends HttpError {
 export class ConflictError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting that the machine really is actually a teapot 🍵
@@ -102,9 +102,9 @@ export class ConflictError extends HttpError {
 export class IAmATeapotError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting the user must enhance their frickin' calm, maaaan. 🌿
@@ -114,9 +114,9 @@ export class IAmATeapotError extends HttpError {
 export class EnhanceYourCalmError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting an unprocessable entity
@@ -126,9 +126,9 @@ export class EnhanceYourCalmError extends HttpError {
 export class UnprocessableEntityError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
 /**
  * Custom error denoting an internal server error (HTTP 500)
@@ -138,7 +138,7 @@ export class UnprocessableEntityError extends HttpError {
 export class InternalServerError extends HttpError {
     /**
     * @param {string} message
-    * @param {string | boolean} externalMessage
+    * @param {string | boolean} [externalMessage]
     */
-    constructor(message: string, externalMessage: string | boolean);
+    constructor(message: string, externalMessage?: string | boolean | undefined);
 }
