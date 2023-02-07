@@ -1,9 +1,11 @@
 # Custom HTTP Errors
 
-To install
+## To Install:
+
 `yarn add @abs-warranty/http-errors`
 
-Import the error you are wanting to use Ex:
+
+## Example Usage: 
 
 ```javascript
 const { NotFoundError } = require('@abs-warranty/http-errors')
@@ -11,7 +13,8 @@ const { NotFoundError } = require('@abs-warranty/http-errors')
 throw new NotFoundError("<yourMessageHere>")
 ```
 
-Available Errors:
+## Available Errors:
+
 | Error                    | Status Code | Message               | Description                                                                |
 |--------------------------|-------------|-----------------------|----------------------------------------------------------------------------|
 | BadReqeustError          | 400         | bad request           | Custom error denoting a bad request was made                               |
