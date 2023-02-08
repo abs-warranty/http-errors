@@ -8,7 +8,7 @@
       "checkJs": true,
       "emitDeclarationOnly": true, 
       "strict": true,
-      "declarationDir": "./types",
+      "declarationDir": "./",
       "declaration": true,
       "target": "es6",
       "alwaysStrict": true,

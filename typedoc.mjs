@@ -4,7 +4,7 @@ import { globby } from 'globby'
 async function main() {
   const files = await globby(
     [
-      'types/src/index.d.ts',
+      'src/index.d.ts',
     ],
     {
       absolute: true,
