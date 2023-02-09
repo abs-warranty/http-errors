@@ -1,18 +1,17 @@
 {
     "compilerOptions": {
-      "lib": ["es2020", "DOM"],
-      "moduleResolution": "node",
-      "module": "esnext",
-      "allowSyntheticDefaultImports": true,
-      "allowJs": true,
-      "checkJs": true,
-      "emitDeclarationOnly": true, 
-      "strict": true,
-      "declarationDir": "./",
-      "declaration": true,
-      "target": "es6",
-      "alwaysStrict": true,
-      "composite": true
+      "lib": ["es2021"],
+      "moduleResolution": "node", // for Node.js' CommonJS implementation
+      "module": "CommonJS", // CommonJS for node projects
+      "allowSyntheticDefaultImports": true, // allows to write an import like import <module> from "<package>"
+      "allowJs": true, // allow .js files instead of just .ts and .tsx
+      "checkJs": true, // works in tandem with allowJS - allows errors to be reported in .js files
+      "emitDeclarationOnly": true, // only emit .d.ts files; do not emit .js files 
+      "strict": true, //  equivalent to enabling all strict mode family options - stronger type checking
+      "alwaysStrict": true, // ensures files are parsed in ECMASCript strict mode, and emit "use strict" for each source file. 
+      "declarationDir": "./types", // configure root directory for declaration files
+      "target": "es2021",
+      "composite": true // if rootDir not set defaults to directory containing tsconfig.json file -  declaration setting defaults to true
     },
     "include": ["src/index.js"],
     "exclude": ["node_modules"]
