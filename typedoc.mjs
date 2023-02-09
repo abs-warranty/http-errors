@@ -21,10 +21,7 @@ async function main() {
     entryPoints: files.flat(),
   })
 
-  app.options.setCompilerOptions(files.flat(), {
-    // https://www.typescriptlang.org/tsconfig#esModuleInterop
-    esModuleInterop: true
-  }, [{"path": "./"}])
+  app.options.setCompilerOptions(files.flat(), {}, [])
 
   const project = app.convert()
 

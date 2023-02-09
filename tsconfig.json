@@ -7,11 +7,11 @@
       "allowJs": true, // allow .js files instead of just .ts and .tsx
       "checkJs": true, // works in tandem with allowJS - allows errors to be reported in .js files
       "emitDeclarationOnly": true, // only emit .d.ts files; do not emit .js files 
+      "declaration": true, 
       "strict": true, //  equivalent to enabling all strict mode family options - stronger type checking
       "alwaysStrict": true, // ensures files are parsed in ECMASCript strict mode, and emit "use strict" for each source file. 
       "declarationDir": "./types", // configure root directory for declaration files
       "target": "es2021",
-      "composite": true // if rootDir not set defaults to directory containing tsconfig.json file -  declaration setting defaults to true
     },
     "include": ["src/index.js"],
     "exclude": ["node_modules"]
