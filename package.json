@@ -1,6 +1,6 @@
 {
   "name": "@abs-warranty/http-errors",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Custom HTTP Errors",
   "main": "src/index.js",
   "files": ["src"],
