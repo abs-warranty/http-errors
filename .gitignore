@@ -16,6 +16,7 @@ scripts/
 **/.vscode
 **/.idea
 
+*.d.ts
 docs/
 types/
 **/*.tsbuildinfo

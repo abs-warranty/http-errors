@@ -4,17 +4,16 @@ import { globby } from 'globby'
 async function main() {
   const files = await globby(
     [
-      'types/src/index.d.ts',
-    ],
-    {
-      absolute: true,
-    }
+      'types/**/*.d.ts',
+    ]
   )
 
   const app = new TypeDoc.Application()
 
   // load tsconfig.json
-  app.options.addReader(new TypeDoc.TSConfigReader())
+  // option reader that discovers user configuration and converts it to the TypeDoc format
+  app.options.addReader(new TypeDoc.TSConfigReader()) 
+  // obtains option values from typedoc.json
   app.options.addReader(new TypeDoc.TypeDocReader())
 
   app.bootstrap({
@@ -22,9 +21,7 @@ async function main() {
     entryPoints: files.flat(),
   })
 
-  app.options.setCompilerOptions(files.flat(), {
-    esModuleInterop: true
-  }, [{"path": "./"}])
+  app.options.setCompilerOptions(files.flat(), {}, [])
 
   const project = app.convert()
 

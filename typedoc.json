@@ -3,5 +3,5 @@
     "includeVersion": true,
     "disableSources": true,
     "cleanOutputDir": true,
-    "theme": "markdown"
+    "theme": "github-wiki"
   }

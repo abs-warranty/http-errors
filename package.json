@@ -3,9 +3,8 @@
   "version": "1.0.4",
   "description": "Custom HTTP Errors",
   "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
+  "types": "types/index.d.ts",
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "contributors": [
     "Dave Snyder <daverted@gmail.com>",
@@ -15,9 +14,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf docs types rm tsconfig.tsbuildinfo",
+    "clean": "rm -rf docs types tsconfig.tsbuildinfo",
     "doc": "node typedoc.mjs",
-    "type": "tsc --checkJs true --noEmit false --emitDeclarationOnly true",
+    "type": "tsc",
     "build": "yarn clean; yarn type"
   },
   "husky": {
