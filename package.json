@@ -1,9 +1,11 @@
 {
   "name": "@abs-warranty/http-errors",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Custom HTTP Errors",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "types": "types/index.d.ts",
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "contributors": [
