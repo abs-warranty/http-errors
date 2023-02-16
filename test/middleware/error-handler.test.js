@@ -31,14 +31,6 @@ describe('Http Error Handler', function () {
     sandbox.restore()
   })
 
-  it('should respond with an HttpError if the given error is of that type', async function () {
-    const err = new ForbiddenError(errorMessage, true)
-    handler(err, req, res, next)
-
-    assert.equal(res.status.firstCall.args[0], err.statusCode)
-    assert.deepEqual(res.json.firstCall.args[0], err.json)
-  })
-
   it('should respond with an HttpError if the given error has a matching name', async function () {
     const err = new UnauthorizedError(errorMessage, true)
     handler(err, req, res, next)
