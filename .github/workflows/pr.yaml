@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   test-and-coverage:
     if: "!contains(github.event.head_commit.message, 'ci: version bump') && github.actor != 'dependabot[bot]'"
@@ -22,7 +25,7 @@ jobs:
 
       - name: Unit test
         run: yarn test
-      # TODO: Uncomment when we can the public http-errors from our organization to codeclimate
+      # TODO: Uncomment when we can the http-errors from our organization to codeclimate
       # - uses: paambaati/codeclimate-action@v3.2.0
       #   env:
       #     CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TEST_REPORTER_ID }}
