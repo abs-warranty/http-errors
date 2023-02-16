@@ -41,3 +41,5 @@ app.use(axiosErrorHandler)
 // Catch-all error handler must be used as last middleware in application
 app.use(errorHandler)
 ```
+
+> Note: These middleware must be placed after all routes have been added to express application
