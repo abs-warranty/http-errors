@@ -4,9 +4,6 @@
 
 `yarn add @abs-warranty/http-errors`
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/37bec9bad4cb264a2f90/maintainability)](https://codeclimate.com/github/abs-warranty/http-errors/maintainability) 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/37bec9bad4cb264a2f90/test_coverage)](https://codeclimate.com/github/abs-warranty/http-errors/test_coverage)
-
 
 ## Example Usage:
 
@@ -34,7 +31,11 @@ throw new NotFoundError('<yourMessageHere>')
 ## Error Handler Usage:
 
 ```javascript
-const { errorHandler, notFoundHandler, axiosErrorHandler } = require('@abs-warranty/http-errors/src/middleware')
+// Import and create express app
+const express = require('express')
+const app = express()
+// Import HttpErrors middleware
+const { errorHandler, notFoundHandler, axiosErrorHandler } = require('@abs-warranty/http-errors/middleware')
 
 // Handle invalid endpoints
 app.use(notFoundHandler)
