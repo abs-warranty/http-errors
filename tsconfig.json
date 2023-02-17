@@ -13,6 +13,6 @@
       "declarationDir": "./types", // configure root directory for declaration files
       "target": "es2021",
     },
-    "include": ["src/index.js"],
+    "include": ["http-errors/index.js", "middleware/index.js"],
     "exclude": ["node_modules"]
   }
