@@ -22,7 +22,8 @@
     "doc": "node typedoc.mjs",
     "type": "tsc",
     "build": "yarn clean; yarn type",
-    "test": "NODE_ENV=test nyc mocha --recursive"
+    "test": "NODE_ENV=test nyc mocha --recursive",
+    "coverage": "nyc report --reporter=text-lcov --reporter=lcov"
   },
   "husky": {
     "hooks": {
