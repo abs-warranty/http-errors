@@ -1,6 +1,6 @@
-const handler = require('../../src/middleware/error-handler')
+const handler = require('../../middleware/error-handler')
 const sinon = require('sinon')
-const { ForbiddenError, UnauthorizedError } = require('../../src')
+const { UnauthorizedError } = require('../../http-errors')
 const assert = require('chai').assert
 
 describe('Http Error Handler', function () {
@@ -40,7 +40,7 @@ describe('Http Error Handler', function () {
   })
 
   it('should respond with an Internal Server Error if the error is not an http error', async function () {
-    const initialErr = new Error(errorMessage, true)
+    const initialErr = new Error(errorMessage)
     const err = { error: 'internal server error' }
     const statusCode = 500
 

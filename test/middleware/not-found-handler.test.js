@@ -1,7 +1,7 @@
 const assert = require('chai').assert
 
-const { NotFoundError } = require('../../src')
-const { notFoundHandler } = require('../../src/middleware')
+const { NotFoundError } = require('../../http-errors')
+const { notFoundHandler } = require('../../middleware')
 
 describe('Not Found Handler Middleware', () => {
   const fail = e => assert.fail(`Test should not throw: ${e.message}`)
