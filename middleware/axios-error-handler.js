@@ -1,13 +1,9 @@
 const { AxiosError } = require('axios')
-const { HttpError } = require('../index')
+const { HttpError } = require('../http-errors')
 
 /**
  * Express middleware error handler for converting any axios-thrown errors to HTTP Errors
- *
- * @param {Error | import('axios').AxiosError} err
- * @param {import('express').Request} req: express request object
- * @param {import('express').Response} res: express response object
- * @param {import('express').NextFunction} next: express next
+ * @type {import('express').ErrorRequestHandler}
  */
 function axiosErrorHandler(err, req, res, next) {
   if (err instanceof AxiosError && err.response) {
