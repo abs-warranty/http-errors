@@ -1,4 +1,3 @@
-const { AxiosError } = require('axios')
 const { HttpError } = require('../http-errors')
 
 /**
@@ -6,7 +5,7 @@ const { HttpError } = require('../http-errors')
  * @type {import('express').ErrorRequestHandler}
  */
 function axiosErrorHandler(err, req, res, next) {
-  if (err instanceof AxiosError && err.response) {
+  if ('isAxiosError' in err) {
     next(new HttpError(err.response?.status, err.response?.data?.message, true))
   } else next(err)
 }
