@@ -8,7 +8,7 @@
     "middleware",
     "types"
   ],
-  "types": "types/index.d.ts",
+  "types": "types/http-errors/index.d.ts",
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "contributors": [
     "Dave Snyder <daverted@gmail.com>",
