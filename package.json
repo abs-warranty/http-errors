@@ -12,6 +12,9 @@
       "types": "./types/middleware/index.d.js"
     }
   },
+  "engines": {
+    "node": ">=16"
+  },
   "repository": "git@github.com:abs-warranty/http-errors.git",
   "contributors": [
     "Dave Snyder <daverted@gmail.com>",
