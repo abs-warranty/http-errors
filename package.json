@@ -1,6 +1,6 @@
 {
   "name": "@abs-warranty/http-errors",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Custom HTTP Errors",
   "exports": {
     ".": {
