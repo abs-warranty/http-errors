@@ -6,3 +6,6 @@
 .prettierrc
 test/
 yarn-error.log
+typedoc.*
+tsconfig.json
+.prettierignore

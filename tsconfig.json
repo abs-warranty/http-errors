@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["es2021"],
+    "lib": ["ES2021"],
     "moduleResolution": "node16", // for Node.js' CommonJS implementation
-    "module": "CommonJS", // CommonJS for node projects
+    "module": "commonjs", // CommonJS for node projects
     "allowSyntheticDefaultImports": true, // allows to write an import like import <module> from "<package>"
     "allowJs": true, // allow .js files instead of just .ts and .tsx
     "checkJs": true, // works in tandem with allowJS - allows errors to be reported in .js files
@@ -11,8 +11,7 @@
     "declarationMap": true,
     "strict": true, //  equivalent to enabling all strict mode family options - stronger type checking
     "alwaysStrict": true, // ensures files are parsed in ECMASCript strict mode, and emit "use strict" for each source file.
-    "declarationDir": "./types", // configure root directory for declaration files
-    "target": "es2021"
+    "declarationDir": "./types" // configure root directory for declaration files
   },
   "include": ["./src/http-errors/index.js", "./src/middleware/index.js"],
   "exclude": ["node_modules"]
