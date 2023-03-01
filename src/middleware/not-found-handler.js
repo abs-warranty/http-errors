@@ -9,7 +9,7 @@ const { NotFoundError } = require('../http-errors')
  *
  */
 function notFoundHandler(req, res, next) {
-  next(new NotFoundError(`Route ${req.method} ${req.baseUrl} does not exist`))
+  next(new NotFoundError(`Route ${req.method} ${req.url} does not exist`))
 }
 
 module.exports = notFoundHandler

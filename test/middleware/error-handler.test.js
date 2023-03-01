@@ -1,6 +1,6 @@
-const handler = require('../../middleware/error-handler')
+const handler = require('../../src/middleware/error-handler')
 const sinon = require('sinon')
-const { UnauthorizedError } = require('../../http-errors')
+const { UnauthorizedError } = require('../../src/http-errors')
 const assert = require('chai').assert
 
 describe('Http Error Handler', function () {

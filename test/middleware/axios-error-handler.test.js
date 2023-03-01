@@ -1,7 +1,7 @@
 const assert = require('chai').assert
 const { AxiosError } = require('axios')
-const { HttpError } = require('../../http-errors')
-const axiosErrorHandler = require('../../middleware/axios-error-handler')
+const { HttpError } = require('../../src/http-errors')
+const axiosErrorHandler = require('../../src/middleware/axios-error-handler')
 
 describe('Axios Error Handler', () => {
   /** @ts-ignore @type {import('express').Request} */
