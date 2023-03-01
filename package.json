@@ -2,12 +2,10 @@
   "name": "@abs-warranty/http-errors",
   "version": "2.0.1",
   "description": "Custom HTTP Errors",
-  "main": "src/http-errors/index.js",
-  "types": "types/http-errors/index.d.js",
   "exports": {
     ".": {
       "types": "./types/http-errors/index.d.js",
-      "default": "./src/index.js"
+      "default": "./src/http-errors/index.js"
     },
     "./middleware": {
       "types": "./types/middleware/index.d.js",
