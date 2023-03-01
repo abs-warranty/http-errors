@@ -2,14 +2,16 @@
   "name": "@abs-warranty/http-errors",
   "version": "2.0.1",
   "description": "Custom HTTP Errors",
+  "main": "src/http-errors/index.js",
+  "types": "types/http-errors/index.d.js",
   "exports": {
     ".": {
-      "default": "./src/index.js",
-      "types": "./types/http-errors/index.d.js"
+      "types": "./types/http-errors/index.d.js",
+      "default": "./src/index.js"
     },
     "./middleware": {
-      "default": "./src/middleware/index.js",
-      "types": "./types/middleware/index.d.js"
+      "types": "./types/middleware/index.d.js",
+      "default": "./src/middleware/index.js"
     }
   },
   "engines": {
