@@ -26,7 +26,7 @@ class HttpError extends Error {
    * @param {string} message 
    * @param {string | boolean} [externalMessage]
    */
-  constructor(statusCode, message, externalMessage) {
+  constructor(statusCode = 500, message, externalMessage) {
     super(message)
     this.name = 'HttpError'
     this.statusCode = statusCode
