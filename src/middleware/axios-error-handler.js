@@ -6,7 +6,7 @@ const { HttpError } = require('../http-errors')
  */
 function axiosErrorHandler(err, req, res, next) {
   if ('isAxiosError' in err) {
-    next(new HttpError(err.response?.status, err.response?.data?.message, true))
+    next(new HttpError(err.response?.status ?? 500, err.response?.data?.message ?? err.message, true))
   } else next(err)
 }
 
